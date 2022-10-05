@@ -4,7 +4,7 @@
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.418);
     position: fixed;
-    top: 0;
+    top: 5%;
     left: 13%;
     display: flex;
     align-items: center;
