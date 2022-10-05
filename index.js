@@ -27,7 +27,7 @@ const __dirname = dirname(__filename);
 //3
  const connect = ()=>{
     try {
-     mongoose.connect(process.env.MONGO_URL);
+     mongoose.connect(process.env.MONGO_URI);
     console.log ('connected to mongodb')
   } catch (error) {
     throw(error);
