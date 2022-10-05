@@ -17,6 +17,7 @@ const Reserve = ({setOpen, hotelId}) => {
         const start = new Date(startDate)
         const end = new Date(endDate)
         const date = new Date(start.getTime())
+       
 
        const dates = []
 
@@ -55,12 +56,14 @@ const Reserve = ({setOpen, hotelId}) => {
         
          }
      }
+
+     const dataa = Array.from(data)
   return (
     <div className='reserve'>
         <div className="rContainer">
             <FontAwesomeIcon icon={faCircleXmark} className='rClose' onClick={()=>setOpen(false)}/>
             <span>Select your Rooms:</span>
-            {data.map((item) =>(
+            {dataa.map((item) =>(
               <div className="rItem">
                 <div className="rItemInfo">
                     <div className="rTitle">{item.title}</div>
