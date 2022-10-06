@@ -9,9 +9,10 @@ import {useNavigate} from 'react-router-dom'
 import { axiosInstance } from '../../config'
 
 
+
 const Reserve = ({setOpen, hotelId}) => {
     const [selectedRooms, setSelectedRooms] = useState([])
-    const {data,loading} = useFetch(`/room/${hotelId}`)
+    const {data,loading} = useFetch(`room/${hotelId}`)
     const {dates} = useContext(SearchContext)
     const getDatesInRange = (startDate,endDate)=>{
         const start = new Date(startDate)
