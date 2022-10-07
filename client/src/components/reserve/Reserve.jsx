@@ -5,7 +5,6 @@ import { SearchContext } from '../../context/SearchContext'
 import useFetch from '../../hooks/useFetch'
 import "./reserve.css"
 import {useNavigate} from 'react-router-dom'
-
 import { axiosInstance } from '../../config'
 
 
@@ -58,13 +57,13 @@ const Reserve = ({setOpen, hotelId}) => {
          }
      }
 
-     const dataa = Array.from(data)
+     
   return (
     <div className='reserve'>
         <div className="rContainer">
             <FontAwesomeIcon icon={faCircleXmark} className='rClose' onClick={()=>setOpen(false)}/>
             <span>Select your Rooms:</span>
-            {dataa.map((item) =>(
+            {data.map((item) =>(
               <div className="rItem">
                 <div className="rItemInfo">
                     <div className="rTitle">{item.title}</div>
@@ -83,7 +82,7 @@ const Reserve = ({setOpen, hotelId}) => {
             )
 
             )}
-             <button onClick={handleClick} className='rbutton' >Reserve Now</button>
+             <button onClick={handleClick} className='rbutton'>Reserve Now</button>
         </div>
     </div>
   )
