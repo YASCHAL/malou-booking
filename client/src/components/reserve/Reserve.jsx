@@ -63,7 +63,7 @@ const Reserve = ({setOpen, hotelId}) => {
         <div className="rContainer">
             <FontAwesomeIcon icon={faCircleXmark} className='rClose' onClick={()=>setOpen(false)}/>
             <span>Select your Rooms:</span>
-            {data.map((item) =>(
+            {data?.map((item) =>(
               <div className="rItem">
                 <div className="rItemInfo">
                     <div className="rTitle">{item.title}</div>
