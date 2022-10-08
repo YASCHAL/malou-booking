@@ -59,10 +59,13 @@ const Reserve = ({setOpen, hotelId}) => {
       const datas = Array.from(data)
 
      const titles = datas.map(element=> element.title)
-     const descrip = datas.map((element)=> element.desc)
+     const descrip = datas.map(element=> element.desc)
      const mpe = datas.map((element)=> element.maxPeople)
      const prix = datas.map((element)=> element.price)
      const ronum = datas.map((element)=> element.roomNumbers)
+     const ronumnum = datas.map(roomNumber=> roomNumber.number)
+     const ronumid = datas.map(roomNumber=> roomNumber._id)
+     const ronumnu = datas.map(roomNumber=> roomNumber)
 
   return (
     <div className='reserve'>
@@ -77,12 +80,12 @@ const Reserve = ({setOpen, hotelId}) => {
                     <div className="rMax">Max People : <b>{mpe}</b></div>
                     <div className="rPrice">${prix}</div>
                     </div>
-                    {ronum?.map(roomNumber=>(
+                    
                       <div className="room">  
-                      <label>{roomNumber.number}</label>
-                        <input type="checkbox" value={roomNumber._id} onChange={handleSelect} disabled={!isAvailable(roomNumber)} />
+                      <label>{ronumnum}</label>
+                        <input type="checkbox" value={ronumid} onChange={handleSelect} disabled={!isAvailable(ronumnu)} />
                     </div>
-                    ))}
+                  
                 </div>
               
             
