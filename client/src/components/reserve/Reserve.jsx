@@ -9,9 +9,9 @@ import { axiosInstance } from '../../config'
 
 
 
-const Reserve = ({setOpen, roomId}) => {
+const Reserve = ({setOpen, id}) => {
     const [selectedRooms, setSelectedRooms] = useState([])
-    const {data,loading} = useFetch(`/rooms/${roomId}`)
+    const {data,loading} = useFetch(`/hotels/find/${id}`)
     const {dates} = useContext(SearchContext)
     const getDatesInRange = (startDate,endDate)=>{
         const start = new Date(startDate)
