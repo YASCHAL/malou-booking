@@ -56,12 +56,13 @@ const Reserve = ({setOpen, hotelId}) => {
         
          }
      }
+      const datas = Array.from(data)
 
-     const titles = data.map((element)=> element.title)
-     const descrip = data.map((element)=> element.desc)
-     const mpe = data.map((element)=> element.maxPeople)
-     const prix = data.map((element)=> element.price)
-     const ronum = data.map((element)=> element.roomNumbers)
+     const titles = datas.map(element=> element.title)
+     const descrip = datas.map((element)=> element.desc)
+     const mpe = datas.map((element)=> element.maxPeople)
+     const prix = datas.map((element)=> element.price)
+     const ronum = datas.map((element)=> element.roomNumbers)
 
   return (
     <div className='reserve'>
