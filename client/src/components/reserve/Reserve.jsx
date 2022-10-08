@@ -9,9 +9,9 @@ import { axiosInstance } from '../../config'
 
 
 
-const Reserve = ({setOpen, hotelId}) => {
+const Reserve = ({setOpen}) => {
     const [selectedRooms, setSelectedRooms] = useState([])
-    const {data,loading} = useFetch(`/room/${hotelId}`)
+    const {data,loading} = useFetch('/room/633a9fe6ec728b1b5f350065')
     const {dates} = useContext(SearchContext)
     const getDatesInRange = (startDate,endDate)=>{
         const start = new Date(startDate)
@@ -63,7 +63,7 @@ const Reserve = ({setOpen, hotelId}) => {
         <div className="rContainer">
             <FontAwesomeIcon icon={faCircleXmark} className='rClose' onClick={()=>setOpen(false)}/>
             <span>Select your Rooms:</span>
-            {data?.map((item) =>(
+            {data.map((item) =>(
               <div className="rItem">
                 <div className="rItemInfo">
                     <div className="rTitle">{item.title}</div>
@@ -71,7 +71,7 @@ const Reserve = ({setOpen, hotelId}) => {
                     <div className="rMax">Max People : <b>{item.maxPeople}</b></div>
                     <div className="rPrice">${item.price}</div>
                     </div>
-                    {item.roomNumbers?.map(roomNumber=>(
+                    {item.roomNumbers.map(roomNumber=>(
                       <div className="room">  
                       <label>{roomNumber.number}</label>
                         <input type="checkbox" value={roomNumber._id} onChange={handleSelect} disabled={!isAvailable(roomNumber)} />
