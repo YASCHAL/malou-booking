@@ -57,13 +57,13 @@ const Reserve = ({setOpen}) => {
          }
      }
 
-     
+     const datas = Array.from(data)
   return (
     <div className='reserve'>
         <div className="rContainer">
             <FontAwesomeIcon icon={faCircleXmark} className='rClose' onClick={()=>setOpen(false)}/>
             <span>Select your Rooms:</span>
-            {data.map((item) =>(
+            {datas.map((item) =>(
               <div className="rItem">
                 <div className="rItemInfo">
                     <div className="rTitle">{item.title}</div>
@@ -71,7 +71,7 @@ const Reserve = ({setOpen}) => {
                     <div className="rMax">Max People : <b>{item.maxPeople}</b></div>
                     <div className="rPrice">${item.price}</div>
                     </div>
-                    {item.roomNumbers.map(roomNumber=>(
+                    {item.roomNumbers?.map(roomNumber=>(
                       <div className="room">  
                       <label>{roomNumber.number}</label>
                         <input type="checkbox" value={roomNumber._id} onChange={handleSelect} disabled={!isAvailable(roomNumber)} />
