@@ -1,13 +1,14 @@
 import './list.css'
 import Header from '../../components/header/Header'
 import Navbar from '../../components/navbar/Navbar'
-import { useLocation } from 'react-router-dom'
-import { useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { useContext, useState } from 'react'
 import { format } from 'date-fns'
 import { DateRange } from 'react-date-range'
 import SearchItem from '../../components/searchItem/SearchItem'
 import useFetch from '../../hooks/useFetch'
 import MailList from '../../components/mail/MailList'
+import { SearchContext } from '../../context/SearchContext'
 
 
 
@@ -20,24 +21,31 @@ const List = () => {
   const [min,setMin] = useState(undefined);
   const [max,setMax]= useState(undefined);
 
+  const {dispatch} = useContext(SearchContext)
 
-  const {data, loading, reFetch} = useFetch(`/hotels?city=${destination}&max=${max || 999}&min=${min || 0}`);
+  const navigate = useNavigate()
+   
+  
+  const {data, loading, reFetch } = useFetch(`/hotels?city=${destination}&max=${max || 999}&min=${min || 0}`);
   const handleClick = ()=>{
     reFetch()
-    
+    dispatch({type: "NEW_SEARCH", payload:{destination, dates, options}})
+    navigate('/hotels' , {state:{destination, dates, options}})
   }
+ 
 
   return (
     <div > 
       <Navbar/>
       <Header type="list"/>
+      
       <div className="listContainer">
         <div className="listWrapper">
           <div className="listSearch">
             <h1 className="lsTitle">Search</h1>
             <div className="lsItem">
               <label htmlFor="" >destination</label>
-              <input type="text" placeholder={destination}/>
+              <input onChange={(e)=>setDestination(e.target.value.toLowerCase())} type="text" placeholder={destination}/>
             </div>
             <div className="lsItem">
               <label htmlFor="">Check-in Date</label>
@@ -72,11 +80,11 @@ const List = () => {
               </div>
               <div className="lsOptionItem">
                 <span className="lsOptionText">Children </span>
-                <input min={0} className='lsOptionInput' type="number" placeholder={options.children}/>
+                <input min={0}  className='lsOptionInput' type="number" placeholder={options.children}/>
               </div>
               <div className="lsOptionItem">
                 <span className="lsOptionText">Room </span>
-                <input min={1} className='lsOptionInput' type="number" placeholder={options.room}/>
+                <input min={1}  className='lsOptionInput' type="number" placeholder={options.room}/>
               </div>
               </div> 
             </div>
@@ -96,7 +104,10 @@ const List = () => {
         </div>
          
       </div>
+      <div className='mail_list'>
       <MailList />
+      </div>
+
       
      
      

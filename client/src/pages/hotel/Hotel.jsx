@@ -13,11 +13,12 @@ import { AuthContext } from "../../context/AuthContext";
 import Reserve from "../../components/reserve/Reserve.jsx";
 
 
+
 const Hotel = () => {
   const location = useLocation()
 
   const id = location.pathname.split('/')[2]
-  const [slideNumber,setSlideNumber]= useState(0)
+  const [currentIndex,setCurrentIndex]= useState(0)
   const [open,setOpen]= useState(false)
   const [openModal,setOpenModal]= useState(false)
   const {data, loading} = useFetch(`/hotels/find/${id}`)
@@ -36,18 +37,19 @@ const Hotel = () => {
   const days = dayDifference(dates[0].endDate, dates[0].startDate)
  
   const handleOpen = (i)=>{
-   setSlideNumber(i);
+   setCurrentIndex(i);
    setOpen(true)
   }
 
-  const handleMove= (direction) =>{
-    let newSlideNumber;
-    if (direction === "l"){
-      newSlideNumber = slideNumber === 0 ? 5 : slideNumber-1
-    }else{
-      newSlideNumber = slideNumber === 5 ? 0 : slideNumber+1
-    }
-    setSlideNumber(newSlideNumber)
+  const handleMoveLeft= () =>{
+   const IsFirstSlide = currentIndex === 0
+   const newIndex = IsFirstSlide ? data.photos.length - 1 : currentIndex -1
+   setCurrentIndex(newIndex)
+  }
+  const handleMoveRight= () =>{
+   const IsLastSlide = currentIndex === data.photos.length- 1;
+   const newIndex = IsLastSlide ? 0 : currentIndex + 1;
+   setCurrentIndex(newIndex)
   }
 
    const handleClick = () =>{
@@ -67,11 +69,11 @@ const Hotel = () => {
         <div className="hotelContainer">
         {open && <div className="slider">
         <FontAwesomeIcon icon={faCircleXmark} className="close" onClick={()=>setOpen(false)}/>
-        <FontAwesomeIcon icon={faCircleArrowLeft} className="arrow" onClick={()=>handleMove("l")}/>
+        <FontAwesomeIcon icon={faCircleArrowLeft} className="arrow" onClick={() => handleMoveLeft()}/>
         <div className="sliderWrapper">
-          <img src={data.photos[slideNumber]} alt="" className="sliderImg" />
+          <img src={data.photos[currentIndex]} alt="" className="sliderImg" />
         </div>
-        <FontAwesomeIcon icon={faCircleArrowRight} className="arrow" onClick={()=>handleMove("r")}/>
+        <FontAwesomeIcon icon={faCircleArrowRight} className="arrow" onClick={()=>handleMoveRight()}/>
         </div>}
         <div className="hotelWrapper">
           <button className="bookNow" onClick={handleClick}>Reserve or Book Now</button>
@@ -102,7 +104,7 @@ const Hotel = () => {
             </div>
             <div className="hotelDetailsPrice">
               <h1>Strengths of the establishment</h1>
-              <span>Located in the heart of Madrid, this property has an excellent location score of 9.8.</span>
+              <span>Located in the heart of {data.city}, this property has an excellent location score of 9.8.</span>
               <h2><b>${days* data.cheapestPrice* options.room}</b>({days} nights)</h2>
               <button onClick={handleClick}>Reserve or Book Now</button>
             </div>

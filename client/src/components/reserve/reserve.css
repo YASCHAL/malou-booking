@@ -1,40 +1,50 @@
 .reserve{
-    max-width: 1024px;
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.418);
     position: fixed;
-    top: 5%;
-    left: 13%;
+    top: 0%;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: opacity .4s;
+    overflow: hidden;
+    overflow-y: auto;
+}
+.reserve::-webkit-scrollbar {
+    display: none;
 }
 
 .rContainer{
-    background-color: white;
-    padding: 20px;
+    margin: 6rem auto;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 2rem;
+    width: 70%;
     position: relative;
+    transition: all 0.4s ease-in-out;
 }
 
 .rClose{
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 1rem;
+    right: 1rem;
     cursor: pointer;
 }
 
 .rItem{
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    padding: 10px;
+   width: 100%;
+   display: flex;
+   
+   justify-content: space-between;
 }
 
 .rItemInfo{
+    padding-top: 10px;
     display: flex;
+    width: 70%;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
 }
 
 
@@ -56,21 +66,32 @@
 
 .rSelectRooms{
     display: flex;
+    width: 20px;
     flex-wrap: wrap;
     gap: 5px;
     font-size: 5px;
 }
 
 .room{
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
     font-size: 14px;
+    align-items: center;
+   
+    
+}
+.room > input {
+    width: 50px;
+    margin-left: 0;
+    padding-left: 0;
+    height: 15px;
 }
 
 .rbutton{
     border: none;
     padding: 10px 20px;
-    background-color: #4d3a4d;
+    background-color: rgb(8, 49, 139);
     color: white;
     font-weight: bold;
     cursor: pointer;
