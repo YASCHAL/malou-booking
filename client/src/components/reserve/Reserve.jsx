@@ -60,7 +60,7 @@ const Reserve = ({ setOpen, hotelId }) => {
     try {
       await Promise.all(
         selectedRooms.map((roomId) => {
-          const res = axios.put(`/rooms/availability/${roomId}`, {
+          const res = axiosInstance.put(`/rooms/availability/${roomId}`, {
             dates: alldates,
           });
           return res.data;
@@ -74,7 +74,7 @@ const Reserve = ({ setOpen, hotelId }) => {
         selectedRooms,
         selectedDates,
       };
-      await axios.post("/reservation", newReservation);
+      await axiosInstance.post("/reservation", newReservation);
       setOpen(false);
     } catch (err) {}
   };
