@@ -110,10 +110,7 @@ const Hotel = () => {
             </div>
           </div>
         </div>
-        <div className="mail_list">
-
         <MailList/>
-        </div>
         <Footer/>
       </div>
         </>
