@@ -38,7 +38,7 @@ const Featured = () => {
         ):(
        <>
         <div className="featuredItem" onMouseMove={(e) => {setDestination("berlin")}} onClick={handleSearch}>
-            <img src="https://images.pexels.com/photos/1268127/pexels-photo-1268127.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" className="featuredImg" />
+            <img src="https://images.pexels.com/photos/3484001/pexels-photo-3484001.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" className="featuredImg" />
             <div className="featuredTitles">
                 <h1>Berlin</h1>
                 <h2>{data[0]} propreties</h2>
@@ -46,7 +46,7 @@ const Featured = () => {
             </div>
         </div>
         <div className="featuredItem" onMouseMove={(e) => {setDestination("madrid")}} onClick={handleSearch}>
-            <img src="https://images.pexels.com/photos/3757144/pexels-photo-3757144.jpeg?auto=compress&cs=tinysrgb&w=600" alt='' />
+            <img src="https://media.istockphoto.com/photos/madrid-city-skyline-gran-via-street-twilight-spain-picture-id1059076792?b=1&k=20&m=1059076792&s=612x612&w=0&h=zD7dGFJ_GwCD_UPwN93yoRAyZcEyWVkK7ToKVLBN9Co=" alt='' className="featuredImg" />
             <div className="featuredTitles">
                 <h1>Madrid</h1>
                 <h2>{data[1]} propreties</h2>

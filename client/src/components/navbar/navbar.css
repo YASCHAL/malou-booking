@@ -3,6 +3,7 @@
     background-color: rgb(8, 49, 139);
     display: flex;
     justify-content: center;
+    
   }
   
   .navContainer {
@@ -29,4 +30,32 @@
       font-size: 16px;
       color: rgb(8, 49, 139)
       ;
+  }
+  .navButton:hover {
+      -webkit-transform: scale(1.5);
+      transform: scale(1.03);
+  
+  
+  }
+  .navItems > button{
+      margin-left: 20px;
+      height: 35px;
+      border: none;
+     margin: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      color: white;
+      background-color: rgb(8, 49, 139);
+  }
+  .navContainer > img {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      margin-left: 800px;
+  }
+  
+  .navItems > button:hover {
+      -webkit-transform: scale(1.5);
+      transform: scale(1.2);
+  
   }

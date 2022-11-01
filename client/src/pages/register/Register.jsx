@@ -1,9 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileImage } from "@fortawesome/free-solid-svg-icons";
-import axios from "axios";
 import React, { useContext, useState } from "react";
 import "./register.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { axiosInstance } from "../../config";
 
@@ -60,7 +59,7 @@ const Register = () => {
       <div className="login">
         <div className="login_container">
           <div className="register">
-            <h3>Register</h3>
+            <h1>Register</h1>
             <input
               type="text"
               onChange={handleChange}
@@ -111,6 +110,7 @@ const Register = () => {
             </div>
 
             <button onClick={handleClick}>Create account</button>
+            <Link to={"/login"}><p>Back To Login</p> </Link>
           </div>
         </div>
       </div>

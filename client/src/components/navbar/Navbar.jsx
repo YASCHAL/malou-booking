@@ -2,9 +2,12 @@ import "./navbar.css"
 import {Link, useNavigate} from 'react-router-dom'
 import { useContext } from "react"
 import { AuthContext } from "../../context/AuthContext"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons"
 
 function Navbar() {
   const {user} = useContext(AuthContext)
+  const {loading, error, dispatch} = useContext(AuthContext)
   const navigate = useNavigate()
 
   const handleClick = () => {
@@ -14,7 +17,10 @@ function Navbar() {
   const goToRegisterPage = () => {
     navigate('/register')
   }
-
+  const logout = () => {
+    dispatch({type:"LOGOUT"})
+    navigate('/')
+  }
 
   return (
     <div className="navbar">
@@ -22,8 +28,18 @@ function Navbar() {
           <Link to="/" style={{color:"inherit", textDecoration:"none"}}> 
           <span className="logo"> Malou Booking </span>
           </Link>
-           {user ? user.username : (
-            <div className="navItems">
+           {user 
+           ? <>
+           <img src={user.img} alt="" />
+           <div className="navItems">
+                   
+                   <span> {user.username} </span>
+                   <button onClick={logout} >Logout</button>
+                   <FontAwesomeIcon className="logout" icon={faArrowRightFromBracket} />
+           </div>
+           </>
+           : (
+            <div>
                 <button onClick={goToRegisterPage} className="navButton">Register</button>
                 <button onClick={handleClick} className="navButton">Login</button>
             </div>

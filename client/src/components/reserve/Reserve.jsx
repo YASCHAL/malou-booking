@@ -5,7 +5,6 @@ import { SearchContext } from "../../context/SearchContext";
 import useFetch from "../../hooks/useFetch";
 import "./reserve.css";
 import { axiosInstance } from "../../config";
-import axios from "axios";
 import { AuthContext } from "../../context/AuthContext";
 
 const Reserve = ({ setOpen, hotelId }) => {
@@ -15,7 +14,7 @@ const Reserve = ({ setOpen, hotelId }) => {
   const [selectedDates, setSelectedDates] = useState("");
   const [selectedRooms, setSelectedRooms] = useState([]);
   const { user } = useContext(AuthContext);
-  const [roomsNumber, setRoomsNumber] = useState([]);
+  const [roomsNumber, setRoomsNumber] = useState();
   const { data, loading } = useFetch(`/hotels/room/${hotelId}`);
   const { dates } = useContext(SearchContext);
   const getDatesInRange = (startDate, endDate) => {
@@ -42,6 +41,7 @@ const Reserve = ({ setOpen, hotelId }) => {
   const handleSelect = (e) => {
     const checked = e.target.checked;
     const value = e.target.value;
+
     setSelectedRooms(
       checked
         ? [...selectedRooms, value]
@@ -55,7 +55,8 @@ const Reserve = ({ setOpen, hotelId }) => {
       dates[0].endDate.toString(),
     ]);
   };
-
+  
+  console.log(roomsNumber)
   const handleClick = async () => {
     try {
       await Promise.all(
@@ -78,7 +79,6 @@ const Reserve = ({ setOpen, hotelId }) => {
       setOpen(false);
     } catch (err) {}
   };
-
   return (
     <div className="reserve">
       <div className="rContainer">
@@ -102,7 +102,7 @@ const Reserve = ({ setOpen, hotelId }) => {
               {item.roomNumbers.map((roomNumber) => {
                 return (
                   <div className="room">
-                    <label>{roomNumber.number}</label>
+                    <label id={roomNumber._id} >{roomNumber.number}</label>
                     <input
                       type="checkbox"
                       value={roomNumber._id}

@@ -41,7 +41,7 @@ const SearchItem = ({ item }) => {
         )}
 
         <div className="siDetailsTexts">
-          <span className="siPrice">${item.cheapestPrice}</span>
+          <span className="siPrice">$ {item.cheapestPrice}</span>
           <span className="siTaxOp">Includes taxes and fees</span>
            <div className="siCheck">
           <button onClick={handleClick} className="siCheckButton">

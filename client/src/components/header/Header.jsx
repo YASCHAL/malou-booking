@@ -57,7 +57,7 @@ const Header = ({type}) =>{
       dispatch({type: "NEW_SEARCH", payload:{destination, dates, options}})
     navigate('/hotels' , {state:{destination, dates, options}})
   }else{
-    alert('Veuillez saisir une destination')
+    alert('Veuillez choisir une destination')
   }
     }
    
@@ -95,12 +95,16 @@ const Header = ({type}) =>{
         <div className="headerSearch">
           <div className="headerSearchItem">
           <FontAwesomeIcon icon={faBed} className="headerIcon"/>
-          <input type="text" placeholder="Where are you going?" className="headerSearchInput" onChange={(e)=>setDestination(e.target.value.toLowerCase())} />
+          <input type="text" 
+          placeholder="Where are you going?" 
+          className="headerSearchInput" 
+          onChange={(e)=>setDestination(e.target.value.toLowerCase()) } />
         
           </div>
           <div className="headerSearchItem">
           <FontAwesomeIcon icon={faCalendarDays} className="headerIcon"/>
-           <span onClick={()=>setOpenDate(!openDate)} className="headerSearchText">{`${format(dates[0].startDate,"MM/dd/yyyy")} to ${format(dates[0].endDate,"MM/dd/yyyy")}`}</span>
+           <span onClick={()=>setOpenDate(!openDate)} 
+           className="headerSearchText">{`${format(dates[0].startDate,"MM/dd/yyyy")} to ${format(dates[0].endDate,"MM/dd/yyyy")}`}</span>
             
            {openDate && <DateRange
               editableDateInputs={true}
@@ -118,7 +122,7 @@ const Header = ({type}) =>{
             <div className="optionItem">
               <span className="optionText">Adult</span>
               <div className="optionCounter">
-                 <button disabled={options.adult <= 1} className="optionCounterButton" onClick={()=>handleOption("adult", "d")}>-</button>
+              <button disabled={options.adult <= 1} className="optionCounterButton" onClick={()=>handleOption("adult", "d")}>-</button>
               <span className="optionCounterNumber">{options.adult}</span>
               <button className="optionCounterButton"onClick={()=>handleOption("adult", "i")}>+</button>
               </div>

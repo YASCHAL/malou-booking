@@ -9,11 +9,11 @@ const MailList = () => {
   }
   return (
     <div className='mail'>
-        <h1 className="mailTitle">Save time, save money</h1>
+        <p className="mailTitle">Save time, save money !</p>
         <span className="mailDesc">Sign up and we'll send the best deals to you </span>
         <div className="mailInputContainer">
-            <input type="text" placeholder='your email' />
-            <button onClick={handleClick}>Subscribe</button>
+            <input type="text" placeholder='Your E-mail Here...' />
+            <button onClick={handleClick}>Subscribe!</button>
         </div>
     </div>
   )

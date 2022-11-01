@@ -20,6 +20,11 @@
     height: 300px;
     object-fit: cover;
 }
+.fpItem:hover{
+    -webkit-transform: scale(1.5);
+	transform: scale(1.03);
+    
+}
 
 .fpName{
     font-weight: bold;

@@ -16,7 +16,6 @@ import Reserve from "../../components/reserve/Reserve.jsx";
 
 const Hotel = () => {
   const location = useLocation()
-
   const id = location.pathname.split('/')[2]
   const [currentIndex,setCurrentIndex]= useState(0)
   const [open,setOpen]= useState(false)
@@ -25,7 +24,9 @@ const Hotel = () => {
   const {user} = useContext(AuthContext)
    const navigate = useNavigate()
   const {dates, options} = useContext(SearchContext)
- 
+  
+
+
 
   const MILLISECONDS_PER_DAY = 1000*60*60*24;
   function dayDifference(date1,date2) {
@@ -39,6 +40,7 @@ const Hotel = () => {
   const handleOpen = (i)=>{
    setCurrentIndex(i);
    setOpen(true)
+
   }
 
   const handleMoveLeft= () =>{
@@ -55,18 +57,19 @@ const Hotel = () => {
    const handleClick = () =>{
       if (user){
          setOpenModal(true)
+
       }else{
         navigate("/login")
       }
    }
 
   return (
-    <div>
+    <div >
       <Navbar />
       <Header type="list" />
       {loading ? ("loading") : (
         <>
-        <div className="hotelContainer">
+        <div className="hotelContainer" >
         {open && <div className="slider">
         <FontAwesomeIcon icon={faCircleXmark} className="close" onClick={()=>setOpen(false)}/>
         <FontAwesomeIcon icon={faCircleArrowLeft} className="arrow" onClick={() => handleMoveLeft()}/>
@@ -89,13 +92,13 @@ const Hotel = () => {
             Book a stay over ${data.cheapestPrice} at this proprety and get a free airport taxi
           </span>
           <div className="hotelImages">
-            {data.photos?.map((photo, i) => (
-              <div className="hotelImgWrapper">
+            {data.photos?.map((photo, i ) => (
+              <div className="hotelImgWrapper" >
                 <img onClick={()=>handleOpen(i)} src={photo} alt="" className="hotelImg" />
               </div>
             ))}
           </div>
-          <div className="hotelDetails">
+          <div className="hotelDetails" >
             <div className="hotelDetailsTexts">
               <h1 className="hotelTitle">{data.title}</h1>
               <p className="hotelDesc">
@@ -105,7 +108,7 @@ const Hotel = () => {
             <div className="hotelDetailsPrice">
               <h1>Strengths of the establishment</h1>
               <span>Located in the heart of {data.city}, this property has an excellent location score of 9.8.</span>
-              <h2><b>${days* data.cheapestPrice* options.room}</b>({days} nights)</h2>
+              <h2><b> $ {days* data.cheapestPrice* options.room}</b> ( {days} nights )</h2>
               <button onClick={handleClick}>Reserve or Book Now</button>
             </div>
           </div>

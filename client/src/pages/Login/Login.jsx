@@ -1,5 +1,3 @@
-
-
 import { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { axiosInstance } from '../../config'
@@ -44,14 +42,14 @@ const Login = () => {
   <div className="login_container">
   
     <div className="signIn">
-      <h3>sign-in</h3>
-      <input onChange={handleChange} id="username" type="text" className="username" placeholder="Username" />
+      <h1>sign-in</h1>
+      <input onChange={handleChange} id="username" type="text" className="username" placeholder=" Username" />
       <input
       onChange={handleChange}
       id="password"
       type="password"
       className="password"
-      placeholder="your password"
+      placeholder=" Your Password"
       />
       <button className='login__button' disabled={loading} onClick={handleClick}>Login</button>
       <button className='register__button'  onClick={goToRegisterPage}>Register</button>

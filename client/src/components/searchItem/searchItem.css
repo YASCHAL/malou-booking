@@ -7,10 +7,12 @@
     margin-bottom: 20px;
 }
 
+
 .siImg{
     width: 250px;
     height: 250;
     object-fit: cover;
+    
 }
 .siDesc{
     display: flex;
@@ -62,9 +64,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 80px;
     padding-top: 10px;
-   
+   font-size: 16px;
 }
 
 .siRating{
@@ -76,16 +77,17 @@
 }
 
 .siRating>span{
-    font-weight: 500;
+    font-weight: 530;
+   
 }
 
 .siRating>button{
-    background-color: rgb(8, 49, 139);
+    background-color:  rgb(13, 63, 172);
     color: white;
     padding: 5px;
     font-weight: bold;
     border: none;
-    border-radius: 5px;
+    border-radius: 2px;
 }
 
 .siDetailsTexts{
@@ -96,6 +98,7 @@
     justify-content: space-between;
     gap: 5px;
     padding-right: 5px;
+    margin-bottom: -40px;
 }
 
 .siPrice{
@@ -113,12 +116,17 @@
 
 .siCheckButton{
     
-    width: 70%;
-    background-color: rgb(8, 49, 139);
+    width: 90%;
+    background-color:rgb(13, 63, 172) ;
     color: white;
     font-weight: bold;
-    padding: 10px 5px;
+    padding: 10px 10px;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 2px;
+    
+}
+
+.siCheckButton:hover {
+    background-color:rgb(8, 49, 139) ;
 }

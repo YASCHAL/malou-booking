@@ -9,7 +9,7 @@
 
 .listWrapper{
    
-    min-width: 1024px;
+    width: 1240px;
     display: flex;
     gap: 20px;
     
@@ -18,7 +18,7 @@
     flex: 1;
     background-color: #ffd207;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 2px;
     position: sticky;
     top: 10px;
     height: max-content;
@@ -36,16 +36,29 @@
     flex-direction: column;
     gap: 5px;
     margin-bottom: 10px;
+    
+}
+.lsIt {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: white;
+    padding: 5px;
+    outline: 2px solid rgb(117, 160, 253);
+    font-size: 20px;
+}
+.lsIt > input {
+    font-size: 18px;
+   border: none;
+   outline: none;
+   height: 30px;
+   width: 300px;
 }
 
 .lsItem>label{
-    font-size: 12px;
+    font-size: 16px;
 }
-.lsItem>input{
-    height: 30px;
-    border: none;
-    padding: 5px;
-}
+
 .lsItem>span{
     height: 30px;
     background-color: white;
@@ -53,6 +66,9 @@
     align-items: center;
     cursor: pointer;
     padding: 5px;
+    outline: 2px solid rgb(117, 160, 253);
+    gap: 10px;
+    font-size: 18px;
 }
 
 .lsOptions{
@@ -62,30 +78,68 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
-    
     font-size: 12px;
 }
 
 .lsOptionInput{
-    width: 50px;
+    width: 70px;
+    height: 25px;
+    margin-right: -10px;
+    outline: none;
+    border: 2px solid rgb(117, 160, 253);
 }
 
 .listSearch>button{
     padding: 10px;
-    background-color: rgb(8, 49, 139);
+    background-color: rgb(13, 63, 172);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 2px;
     width: 100%;
     height: 40px;
     font-weight: 500;
     font-size: 18px;
     cursor: pointer;
+    margin-top: 20px;
 }
+.listSearch>button:hover{
+   background-color: rgb(8, 49, 139); 
+}
+
 
 
 .listResults{
     flex: 3;
 }
+.hsItem{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: white;
+    padding: 10px;
+    outline: 2px solid rgb(117, 160, 253);
+    font-size: 18px;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-top: 20px;
+    
+
+ }
+ .hIcon{
+    font-size: 20px;
+    color: rgb(43, 41, 41);
+ }
+ 
+ .opt{
+    z-index: 2;
+    position: absolute;
+    top: 350px;
+    color: rgb(43, 41, 41);;
+    background-color: white;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+ }
+ 
 
 
