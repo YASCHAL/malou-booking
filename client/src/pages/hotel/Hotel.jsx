@@ -56,7 +56,11 @@ const Hotel = () => {
 
    const handleClick = () =>{
       if (user){
-         setOpenModal(true)
+        if(days>0){
+          setOpenModal(true)
+        }else{
+          alert('Please Choose your dates !')
+        }
 
       }else{
         navigate("/login")

@@ -7,8 +7,7 @@
 }
 
 .headerContainer{
-   width: 100%;
-   max-width: 1240px;
+   width: 1240px;
    margin: 20px 0px 100px 0px;
 }
 
@@ -111,6 +110,7 @@
   z-index: 2;
    position: absolute;
    top: 50px;
+   margin-left: 20px;
    background-color: white;
    color: gray;
    border-radius: 5px;

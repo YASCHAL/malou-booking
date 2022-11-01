@@ -12,6 +12,7 @@ import { SearchContext } from '../../context/SearchContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarDays } from '@fortawesome/free-regular-svg-icons'
 import { faMagnifyingGlass, faPerson } from '@fortawesome/free-solid-svg-icons'
+import Footer from '../../components/footer/Footer'
 
 
 
@@ -52,7 +53,7 @@ const List = () => {
       <div > 
       <Navbar/>
       <Header type="list"/>
-      
+      <div className="listPage">
       <div className="listContainer">
       <div className="listWrapper">
       <div className="listSearch">
@@ -96,8 +97,10 @@ const List = () => {
         </div>
         
         <div className="hsItem">
-          <FontAwesomeIcon icon={faPerson} className="hIcon"/>
+        <div className="iItem">
+            <FontAwesomeIcon icon={faPerson} className="hIcon"/>
           <span onClick={()=>setOpenOptions(!openOptions)} className="headerSearchText">{`${options.adult} adult . ${options.children} children . ${options.room} room`}</span>
+          </div>
           {openOptions && <div className="opt">
             <div className="optionItem">
               <span className="optionText">Adult</span>
@@ -140,8 +143,8 @@ const List = () => {
           </div>
           </div>
           </div>
-          <div className='mail_list'>
           <MailList />
+          <Footer/>
           </div>
     </div>
   )
