@@ -53,8 +53,9 @@
 .hotelImages{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     cursor: pointer;
+    padding-top: 10px;
 }
 .hotelImgWrapper:hover {
     -webkit-transform: scale(1.1);
@@ -63,7 +64,7 @@
 
 .hotelImgWrapper{
     width: 33%;
-    padding-top: 10px;
+    
    
 }
 
