@@ -44,7 +44,7 @@
     gap: 10px;
     background-color: white;
     padding: 5px;
-    outline: 2px solid rgb(117, 160, 253);
+    outline: 1px solid rgb(117, 160, 253);
     font-size: 20px;
 }
 .lsIt > input {
@@ -66,7 +66,7 @@
     align-items: center;
     cursor: pointer;
     padding: 5px;
-    outline: 2px solid rgb(117, 160, 253);
+    outline: 1px solid rgb(117, 160, 253);
     gap: 10px;
     font-size: 18px;
 }
@@ -86,7 +86,7 @@
     height: 25px;
     margin-right: -10px;
     outline: none;
-    border: 2px solid rgb(117, 160, 253);
+    border: 1px solid rgb(117, 160, 253);
 }
 
 .listSearch>button{
@@ -117,7 +117,7 @@
     gap: 10px;
     background-color: white;
     padding: 10px;
-    outline: 2px solid rgb(117, 160, 253);
+    outline: 1px solid rgb(117, 160, 253);
     font-size: 18px;
     margin-left: -10px;
     margin-right: -10px;
