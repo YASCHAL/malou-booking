@@ -26,6 +26,9 @@
     color: rgb(8, 49, 139);
     cursor: pointer;
 }
+.siTitle:hover {
+    color: rgb(202, 44, 44);
+}
 
 .siDistance{
     font-size: 12px;

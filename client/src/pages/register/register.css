@@ -46,7 +46,6 @@
   margin-bottom: 20px;
   padding: 10px;
   background-color:  rgba(39, 148, 238, 0.137);
- 
   border-radius: 2px;
 }
 
@@ -55,14 +54,33 @@ background: none ;
 color: rgb(22, 2, 138);
 }
 
-.register > input {
-  width: 400px;
-  height: 40px;
-  border-radius: 2px;
-  border: none;
-  outline: none;
-  font-size: 16px;
+.rI{
+border: none;
+outline: 1px solid rgb(42, 105, 241);
+background-color: white;
+border-radius: 2px;
+padding-left: 5px;
+align-items: center;
 }
+.rI >input {
+border: none;
+width: 350px;
+height: 30px;
+padding: 5px;
+margin-left: 5px;
+outline: none;
+font-size: 18px;
+
+}
+.rI_icon{
+height: 20px;
+width: 30px;
+font-size: 18px;
+padding-right: 5px;
+color: rgb(22, 2, 138);
+border-right: 1px solid lightgray;
+}
+
 
 .register > button {
   height: 40px;

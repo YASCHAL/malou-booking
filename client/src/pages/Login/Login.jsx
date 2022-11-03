@@ -35,23 +35,43 @@ const Login = () => {
 
   return (
     <>
-<div className="bg"></div>
-<div className="bg bg2"></div>
-<div className="bg bg3"></div>
-<div className="login">
-  <div className="login_container">
-  
-    <div className="signIn">
-      <h1>sign-in</h1>
-      <input onChange={handleChange} id="username" type="text" className="username" placeholder=" Username" />
-      <input
-      onChange={handleChange}
-      id="password"
-      type="password"
-      className="password"
-      placeholder=" Your Password"
-      />
-      <button className='login__button' disabled={loading} onClick={handleClick}>Login</button>
+    <div className="bg"></div>
+    <div className="bg bg2"></div>
+    <div className="bg bg3"></div>
+    <div className="login">
+      <div className="login_container">
+        <div className="signIn">
+          <h1>sign-in</h1>
+          <div className="sii">
+          <FontAwesomeIcon icon={faUser} className="sii_icon" />
+            <input
+              onChange={handleChange}
+              id="username"
+              type="text"
+              className="username"
+              placeholder="Username"
+            />
+          </div>
+          <div className="sii">
+          <FontAwesomeIcon icon={faLock} className="sii_icon" />
+
+            <input
+              onChange={handleChange}
+              id="password"
+              type="password"
+              className="password"
+              placeholder="your password"
+            />
+          </div>
+
+          <button
+            className="login__button"
+            disabled={loading}
+            onClick={handleClick}
+          >
+            Login
+          </button>
+         
       <button className='register__button'  onClick={goToRegisterPage}>Register</button>
       {error && <span>{error.message}</span>}
     </div>

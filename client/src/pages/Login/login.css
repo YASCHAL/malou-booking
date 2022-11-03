@@ -63,15 +63,31 @@
 background: none ;
 color: rgb(22, 2, 138);
 }
-
-.signIn >input {
-  width: 400px;
-  height: 40px;
+.sii{
+   border: none;
+  outline: 1px solid rgb(42, 105, 241);
+  background-color: white;
   border-radius: 2px;
-  border: none;
-  outline: 2px solid rgb(42, 105, 241);
-  font-size: 18px;
+  align-items: center;
+}
+.sii >input {
+ border: none;
+ width: 300px;
+ height: 30px;
+ padding: 5px;
+ margin-left: 5px;
+ outline: none;
+ font-size: 18px;
 
+}
+.sii_icon{
+  height: 20px;
+  width: 30px;
+  font-size: 18px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: rgb(22, 2, 138);
+  border-right: 1px solid lightgray;
 }
 
 
