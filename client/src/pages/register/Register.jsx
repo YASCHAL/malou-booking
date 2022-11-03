@@ -5,6 +5,7 @@ import "./register.css";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { axiosInstance } from "../../config";
+import { faEarthEurope, faEnvelope, faLock, faMapLocationDot, faPhone, faUser } from "@fortawesome/free-solid-svg-icons";
 
 const Register = () => {
   const [file, setFile] = useState("");

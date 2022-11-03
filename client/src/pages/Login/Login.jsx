@@ -1,7 +1,8 @@
 import { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { axiosInstance } from '../../config'
-
+import { faLock, faUser } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { AuthContext } from '../../context/AuthContext'
 import './login.css'
 
