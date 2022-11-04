@@ -1,12 +1,16 @@
 .footer{
+    
+    display: flex;
+    justify-content: center;
+    position: relative;
     width: 100%;
-    width: 1240px;
-    font-size: 15px;
+    min-width: 85rem;
     
 }
 
 .fLists{
-    width: 100%;
+    width: 90%;
+    font-size: 15px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;

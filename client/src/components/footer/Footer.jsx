@@ -2,6 +2,7 @@ import "./footer.css";
 
 const Footer = () => {
   return (
+    <>
     <div className="footer">
       <div className="fLists">
         <ul className="fList">
@@ -54,11 +55,12 @@ const Footer = () => {
           <li className="fListItem">Nous ajustons nos tarifs !</li>
         </ul>
       </div>
+    </div>
       <div className="fText">
-        {" "}
+        
         Copyright © 2022 Maloubooking.com. All rights reserved.
       </div>
-    </div>
+    </>
   );
 };
 

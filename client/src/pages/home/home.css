@@ -7,10 +7,12 @@
     gap: 30px;
     overflow: hidden;
     overflow-y: auto;
+    width: 100%;
+    min-width: 85rem;
 }
 
 
 .homeTitle{
-    width: 1240px;
+    width:90%;
     font-size: 20px;
 }
