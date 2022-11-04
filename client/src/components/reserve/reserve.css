@@ -1,6 +1,6 @@
 .reserve{
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.418);
     position: fixed;
     top: 0%;
@@ -22,6 +22,7 @@
     border-radius: 5px;
     padding: 2rem;
     width: 70%;
+    min-width: 78rem;
     position: relative;
     transition: all 0.4s ease-in-out;
 }
