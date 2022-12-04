@@ -1,14 +1,13 @@
 .mail {
   width: 100%;
-  margin-top: 20px;
   background-color: rgb(7, 31, 82);
   color: white;
   min-width: 85rem;
    display: flex;
   flex-direction: column;
   align-items: center;
-   height: 24rem;
-   margin-top: 1%;
+   height: max-content;
+   margin-top: 2%;
 }
 
 .mailContainer {
@@ -23,13 +22,13 @@
 }
 .mail > span {
   font-size: 18px;
-  margin-bottom: 2%;
+  margin-bottom: 1%;
 }
 
 .mailInputContainer > input {
   width: 25rem;
   height: 30%;
-  padding: 10px;
+  padding: 12px;
   border: none;
   margin-right: 10px;
   margin-top: 10%;
@@ -37,8 +36,8 @@
   outline: 2px solid rgb(117, 160, 253);
 }
 .mailInputContainer > button {
-  height: 60%;
-  width: 120px;
+  width: max-content;
+  padding: 14px 10px;
   background-color: rgb(8, 50, 139);
   color: white;
   font-weight: 500;
@@ -56,10 +55,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 4%;
   width: 100%;
   min-width: 85rem;
-  height: 65px;
+  height: max-content;
+  padding: 12px 0;
   background: rgb(5, 48, 139);
   border-bottom: 0.5px solid white;
 }
@@ -72,6 +72,7 @@
   background: rgb(5, 48, 139); 
   align-items: center;
   justify-content: center;
+  
 }
 
 .ajouter > button {

@@ -20,12 +20,12 @@
   .logo{
       font-weight: 800;
       font-size: 22px;
-  
   }
+  
   .navButton{
       margin-left: 20px;
       height: 35px;
-      width: 80px;
+      width: max-content;
       border: 2px solid rgb(117, 160, 253);
       padding: 5px 10px;
       cursor: pointer;
@@ -39,6 +39,12 @@
   
   
   }
+  .navItems {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+  }
+  
   .navItems > button{
       margin-left: 20px;
       height: 35px;
@@ -49,11 +55,11 @@
       color: white;
       background-color: rgb(8, 49, 139);
   }
-  .navContainer > img {
-      width: 35px;
-      height: 35px;
+  .navItems > img {
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
-      margin-left: 800px;
+      
   }
   
   .navItems > button:hover {

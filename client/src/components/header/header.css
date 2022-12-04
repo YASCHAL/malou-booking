@@ -52,6 +52,7 @@
   background-color: rgba(8, 50, 139, 0.425);
 }
 
+
 .headerSearch{
    height: 30px;
    background-color: white;
@@ -65,23 +66,30 @@
    bottom: -25px;
    width: 90%;
    font-size: 18px;
+  
 }
+
+
+
+
 .headerSearchItem > button {
-  width: 100px;
-  height: 40px;
+  width: max-content;
+  height: 3rem;
+  padding: 0 20px;
   background-color: rgb(6, 60, 179);
   color: white;
-  font-size: 18px;
+  font-size: 22px;
   border: none;
   border-radius: 2px;
   cursor: pointer;
+  margin-right: -1rem;
 }
 .headerSearchItem > button:hover {
   background-color: rgb(8, 50, 139);
 }
 
 .headerIcon{
-   color: lightgray;
+   color: rgb(156, 148, 148);
    font-size: 20px;
 }
 
@@ -98,7 +106,7 @@
 }
 
 .headerSearchText{
-   color: rgb(160, 154, 154);
+   color: rgb(179, 173, 173);
    cursor: pointer;
 }
 
@@ -115,7 +123,7 @@
    top: 50px;
    margin-left: 20px;
    background-color: white;
-   color: gray;
+   color: rgb(146, 138, 138);
    border-radius: 5px;
    -webkit-box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
    box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
